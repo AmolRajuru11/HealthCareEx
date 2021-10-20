@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.util;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author Admin
+ *
+ */
+@Component
+public class MyMailUtil {
+	
+	@Autowired
+	private JavaMailSender mailSender;
+	
+	public boolean send(String)
+
+}

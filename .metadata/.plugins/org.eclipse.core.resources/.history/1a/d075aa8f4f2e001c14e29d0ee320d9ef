@@ -1,0 +1,93 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.service.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.sahyandritech.healthcare.entity.Specialization;
+import in.sahyandritech.healthcare.exception.SpecializationNotFoundException;
+import in.sahyandritech.healthcare.repo.SpecializationRepository;
+import in.sahyandritech.healthcare.service.ISpecializationService;
+
+/**
+ * @author Admin
+ *
+ */
+@Service
+public class SpecializationServiceImpl implements ISpecializationService {
+
+	@Autowired
+	private SpecializationRepository specrepo;
+
+	@Override
+	public Long saveSpecialization(Specialization spec) {
+		return specrepo.save(spec).getId();
+	}
+
+	@Override
+	public List<Specialization> getAllSpecialization() {
+		return specrepo.findAll();
+	}
+
+	@Override
+	public void removeSpecialization(Long id) {
+		// specrepo.deleteById(id);
+		specrepo.delete(getOneSpecialization(id));
+	}
+
+	@Override
+	public Specialization getOneSpecialization(Long id) {
+		/*
+		 * Optional<Specialization> optional = specrepo.findById(id); if
+		 * (optional.isPresent()) { return optional.get(); } else { throw new
+		 * SpecializationNotFoundException(id + "Not Found"); }
+		 */
+		return specrepo.findById(id).orElseThrow(() -> new SpecializationNotFoundException(id + " Not Found"));
+
+	}
+
+	@Override
+	public void updateSpecialization(Specialization spec) {
+		specrepo.save(spec);
+	}
+
+	@Override
+	public boolean isSpecCodeExist(String specCode) {
+		/*
+		 * Integer count = specrepo.getSpecCodeCount(specCode); boolean exist =
+		 * count>0?true:false; return exist;
+		 */
+		return specrepo.getSpecCodeCount(specCode) > 0;
+	}
+
+	@Override
+	public boolean isSpecNameExist(String specName) {
+		/*
+		 * Integer count = specrepo.getSpecNameCount(specName); boolean exist = count >
+		 * 0 ? true : false; return exist;
+		 */
+		return specrepo.getSpecNameCount(specName) > 0;
+	}
+
+	@Override
+	public boolean isSpecCodeExistForEdit(String specCode, Long id) {
+		return specrepo.getSpecCodeCountForEdit(specCode, id) > 0;
+	}
+
+	@Override
+	public boolean isSpecNameExistForEdit(String specName, Long id) {
+		return specrepo.getSpecNameCountForEdit(specName, id) > 0;
+	}
+	
+	@Override
+	public Map<Long, String> getSpecIdAndName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

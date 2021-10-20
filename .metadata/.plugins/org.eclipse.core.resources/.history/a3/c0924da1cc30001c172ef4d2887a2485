@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.util;
+
+import org.springframework.stereotype.Component;
+
+/**
+ * @author Admin
+ *
+ */
+@Component
+public class MyMailUtil {
+
+}

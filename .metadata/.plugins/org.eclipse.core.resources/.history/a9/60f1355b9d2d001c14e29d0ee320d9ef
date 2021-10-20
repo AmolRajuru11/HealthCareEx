@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.service;
+
+/**
+ * @author Admin
+ *
+ */
+public interface IDoctorService {
+
+}

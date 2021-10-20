@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * @author Admin
+ *
+ */
+@Entity
+@Table(name="doctor_tab")
+public class Doctor {
+
+}

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.controller;
+
+/**
+ * @author Admin
+ *
+ */
+public class DoctorController {
+
+}

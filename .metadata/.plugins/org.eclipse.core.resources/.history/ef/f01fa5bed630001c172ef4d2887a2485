@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * @author Admin
+ *
+ */
+public interface PatientRepository extends JpaRepository<T, ID> {
+
+}

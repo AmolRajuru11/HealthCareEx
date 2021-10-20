@@ -1,0 +1,54 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.sahyandritech.healthcare.entity.Doctor;
+import in.sahyandritech.healthcare.repo.DoctorRepository;
+import in.sahyandritech.healthcare.service.IDoctorService;
+
+/**
+ * @author Admin
+ *
+ */
+@Service
+public class DoctorServiceImpl implements IDoctorService {
+
+	@Autowired
+	private DoctorRepository doctorRepository;
+
+	@Override
+	public Long saveDoctor(Doctor doc) {
+		return null;
+	}
+
+	@Override
+	public List<Doctor> getAllDoctors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeDoctor(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Doctor getOneDoctor(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateDoctor(Doctor doc) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

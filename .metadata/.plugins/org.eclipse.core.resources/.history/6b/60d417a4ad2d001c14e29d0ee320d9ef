@@ -1,0 +1,8 @@
+function uploadFile(){
+	var file = document.getElementById("fileOb");
+	var form = new FormData();
+	form.append("image", file.files[0]);
+	var input = {
+			url : "https://api.imgbb"
+	}
+}

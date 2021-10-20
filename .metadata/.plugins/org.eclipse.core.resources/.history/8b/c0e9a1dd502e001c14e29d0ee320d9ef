@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import in.sahyandritech.healthcare.entity.Doctor;
+import in.sahyandritech.healthcare.service.IDoctorService;
+import in.sahyandritech.healthcare.service.ISpecializationService;
+
+/**
+ * @author Admin
+ *
+ */
+@Controller
+@RequestMapping("/doctor")
+public class DoctorController {
+
+	@Autowired
+	private IDoctorService doctorService;
+
+	@Autowired
+	private ISpecializationService specservice;
+
+	private void createDynamicUi(Model model) {
+		model.addAttribute("specialization", specservice.getSpecIdAndName());
+	}
+
+	/**
+	 * 1.Show Register page
+	 */
+	@GetMapping("/register")
+	public String showRegister() {
+		return "DoctorRegister";
+	}
+
+	/**
+	 * 2.On Submit form save data
+	 */
+
+	@PostMapping("/save")
+	public String saveForm(@ModelAttribute Doctor doctor, Model model) {
+		Long id = doctorService.saveDoctor(doctor);
+		String message = "Doctor (" + id + ") is created";
+		model.addAttribute("message", message);
+		return "DoctorRegister";
+	}
+
+}

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.util;
+
+/**
+ * @author Admin
+ *
+ */
+public interface MyCollectionUtiil {
+
+}

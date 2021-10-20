@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import in.sahyandritech.healthcare.entity.Patient;
+import in.sahyandritech.healthcare.service.IPatientService;
+
+/**
+ * @author Admin
+ *
+ */
+@Controller
+@RequestMapping(name = "patient")
+public class PatientController {
+
+	@Autowired
+	private IPatientService patientService;
+
+	public String registerPatient(Model model) {
+		model.addAttribute("patient", new Patient());
+		return "PatientRegister";
+	}
+
+}

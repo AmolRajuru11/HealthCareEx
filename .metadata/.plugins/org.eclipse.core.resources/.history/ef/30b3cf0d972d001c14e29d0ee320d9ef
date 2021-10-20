@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.entity;
+
+/**
+ * @author Admin
+ *
+ */
+public class Doctor {
+
+}

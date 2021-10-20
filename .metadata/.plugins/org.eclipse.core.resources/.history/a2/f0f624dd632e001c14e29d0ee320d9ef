@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package in.sahyandritech.healthcare.exception;
+
+/**
+ * @author Admin
+ *
+ */
+public class DoctorNotFoundException {
+
+}
